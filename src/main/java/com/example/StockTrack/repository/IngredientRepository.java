@@ -15,9 +15,6 @@ public interface IngredientRepository extends JpaRepository<Ingredient, UUID> {
 
     List<Ingredient> findByQuantityLessThan(int quantity);
 
-   // List<Ingredient> findByCategory(Category category);
-  // List<Ingredient> findByCategoryId(UUID categoryId);
-
     List<Ingredient> findByExpiryDateBefore(LocalDate expiryDate);
 
     @Query("SELECT i FROM Ingredient i WHERE LOWER(i.name) LIKE LOWER(CONCAT('%', :name, '%'))")
